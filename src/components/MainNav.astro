@@ -1,0 +1,40 @@
+---
+const pathname = Astro.url.pathname;
+const isHome = pathname === '/';
+const isWedding = pathname.includes('/wedding');
+---
+
+<header class="bg-teal-700 text-white shadow-md sticky top-0 z-50">
+  <div class="container mx-auto px-4 py-4">
+    <div class="flex flex-col items-center">
+      <a href="/" class="text-2xl font-bold mb-4">Flying Newt</a>
+      
+      <nav>
+        <ul class="flex space-x-8">
+          <li>
+            <a 
+              href="/" 
+              class={`hover:text-teal-200 transition ${isHome ? 'font-bold border-b-2 border-white pb-1' : ''}`}
+            >
+              Home
+            </a>
+          </li>
+          <li>
+            <a 
+              href="/wedding" 
+              class={`hover:text-teal-200 transition ${isWedding ? 'font-bold border-b-2 border-white pb-1' : ''}`}
+            >
+              Wedding
+            </a>
+          </li>
+          <li>
+            <a href="/about" class="hover:text-teal-200 transition">About Us</a>
+          </li>
+          <li>
+            <a href="/contact" class="hover:text-teal-200 transition">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>

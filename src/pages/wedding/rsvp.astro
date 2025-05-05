@@ -1,0 +1,19 @@
+---
+import WeddingLayout from '../../layouts/WeddingLayout.astro';
+import RsvpForm from '../../components/RsvpForm.vue';
+---
+
+<WeddingLayout title="RSVP">
+  <section class="py-12">
+    <div class="container mx-auto px-4 max-w-3xl">
+      <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">RSVP</h1>
+      <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">
+        Please let us know if you'll be able to join us on our special day by June 1, 2024.
+      </p>
+      
+      <div class="bg-white rounded-lg shadow-lg p-8">
+        <RsvpForm client:load />
+      </div>
+    </div>
+  </section>
+</WeddingLayout>
