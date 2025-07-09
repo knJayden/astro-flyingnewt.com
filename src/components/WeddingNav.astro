@@ -5,7 +5,7 @@ const isGallery = pathname.includes('/wedding/gallery');
 const isRsvp = pathname.includes('/wedding/rsvp');
 ---
 
-<div class="border-b border-gray-200 bg-white">
+<div class="border-b border-gray-200 bg-white sticky top-[104px] z-40">
   <div class="container mx-auto px-4">
     <nav class="flex justify-center">
       <ul class="flex space-x-8 py-3 whitespace-nowrap overflow-x-auto">
@@ -14,7 +14,7 @@ const isRsvp = pathname.includes('/wedding/rsvp');
             href="/wedding" 
             class={`text-gray-700 hover:text-rose-700 transition ${isWeddingHome ? 'font-bold text-rose-700 border-b-2 border-rose-700 pb-1' : ''}`}
           >
-            Wedding Home
+            Details
           </a>
         </li>
         <li>
@@ -33,15 +33,15 @@ const isRsvp = pathname.includes('/wedding/rsvp');
             RSVP
           </a>
         </li>
-        <li>
+        <!-- <li>
           <a href="/wedding#wedding-party" class="text-gray-700 hover:text-rose-700 transition">Wedding Party</a>
-        </li>
+        </li> -->
         <li>
           <a href="/wedding#registry" class="text-gray-700 hover:text-rose-700 transition">Registry</a>
         </li>
-        <li>
+        <!-- <li>
           <a href="/wedding#guestbook" class="text-gray-700 hover:text-rose-700 transition">Guest Book</a>
-        </li>
+        </li> -->
       </ul>
     </nav>
   </div>
