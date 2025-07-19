@@ -1,6 +1,7 @@
 ---
 import WeddingLayout from '../../layouts/WeddingLayout.astro';
 import WeddingCountdown from '../../components/WeddingCountdown.vue';
+import Image from 'astro/components/Image.astro';
 import GuestBook from '../../components/GuestBook.vue';
 ---
 
@@ -91,22 +92,23 @@ import GuestBook from '../../components/GuestBook.vue';
       <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Our Story</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div>
-          <img 
-            src="/placeholder.svg?height=500&width=500" 
+          <Image 
+            src={import("../../assets/P1240400.jpg")} 
             alt="Couple Photo" 
             class="rounded-lg shadow-lg w-full h-auto"
+            width={1500}
+            height={1500}
           />
+
         </div>
         <div>
           <h3 class="text-2xl font-bold text-gray-800 mb-4">How We Met</h3>
           <p class="text-gray-600 mb-6">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. 
-            Cras porttitor metus in nulla faucibus, sit amet gravida felis tincidunt. Nulla facilisi.
+            Jayden and Makenzie's story started back in their school days, though they were more like ships passing in the hallway—familiar faces, but not quite friends. Years later fate gave them a nudge through Jayden's cousin. They started hanging out, and what began as casual get-togethers quickly turned into something real. Their connection just clicked, and the rest is history.
           </p>
           <h3 class="text-2xl font-bold text-gray-800 mb-4">The Proposal</h3>
           <p class="text-gray-600 mb-6">
-            Praesent euismod, nisl eget ultricies ultrices, nunc nisl aliquam nunc, vitae aliquam nisl nunc vitae nisl. 
-            Sed vitae nisl euismod, aliquam nisl vitae, aliquam nisl.
+            On a trip to North Carolina, Jayden and Makenzie visited the stunning Biltmore Estate. While wandering through the gardens, they came across a quirky tree they dubbed the "asparagus tree". It was there, under that funny tree, that Jayden got down on one knee and proposed. It was a simple, heartfelt moment—perfectly them.
           </p>
           <p class="italic text-gray-700">
             "Love is not about how many days, months, or years you have been together. 
