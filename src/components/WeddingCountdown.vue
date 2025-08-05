@@ -1,22 +1,28 @@
 <template>
-    <div class="countdown-container">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto">
-        <div class="bg-white rounded-lg shadow-md p-4 text-center">
-          <div class="text-3xl md:text-4xl font-bold text-rose-600">{{ days }}</div>
-          <div class="text-gray-600">Days</div>
+    <div class="countdown-container bg-zinc-800 border-zinc-800 border-b border-t border-solid pt-5 pb-5">
+
+      
+          
+      <div class="grid grid-cols-4 md:grid-cols-4 gap-4 max-w-2xl mx-auto">
+              
+        <div class="text-center">
+          <div class="text-3xl md:text-5xl font-bold text-green">{{ days }}</div>
+          <div class="text-zinc-400 text-base">Days</div>
+         
         </div>
-        <div class="bg-white rounded-lg shadow-md p-4 text-center">
-          <div class="text-3xl md:text-4xl font-bold text-rose-600">{{ hours }}</div>
-          <div class="text-gray-600">Hours</div>
+        <div class="text-center">
+          <div class="text-3xl md:text-5xl font-bold text-green">{{ hours }}</div>
+           <div class="text-zinc-400 text-base">Hours</div>
         </div>
-        <div class="bg-white rounded-lg shadow-md p-4 text-center">
-          <div class="text-3xl md:text-4xl font-bold text-rose-600">{{ minutes }}</div>
-          <div class="text-gray-600">Minutes</div>
+        <div class="text-center">
+          <div class="text-3xl md:text-5xl font-bold text-green">{{ minutes }}</div>
+           <div class="text-zinc-400 text-base">Minutes</div>
         </div>
-        <div class="bg-white rounded-lg shadow-md p-4 text-center">
-          <div class="text-3xl md:text-4xl font-bold text-rose-600">{{ seconds }}</div>
-          <div class="text-gray-600">Seconds</div>
+        <div class="text-center">
+          <div class="text-3xl md:text-5xl font-bold text-green">{{ seconds }}</div>
+           <div class="text-zinc-400 text-base">Seconds</div>
         </div>
+
       </div>
     </div>
   </template>

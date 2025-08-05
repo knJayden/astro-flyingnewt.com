@@ -3,67 +3,88 @@ import WeddingLayout from '../../layouts/WeddingLayout.astro';
 import WeddingCountdown from '../../components/WeddingCountdown.vue';
 import Image from 'astro/components/Image.astro';
 import GuestBook from '../../components/GuestBook.vue';
+
 ---
 
 <WeddingLayout title="Our Wedding">
-  <!-- Hero Section -->
-  <section class="py-20 bg-gradient-to-b from-rose-100 to-white">
-    <div class="container mx-auto px-4 text-center">
-      <h1 class="text-4xl md:text-6xl font-bold text-rose-800 mb-4">We're Getting Married!</h1>
-      <p class="text-2xl text-gray-700 mb-8">Makenzie & Jayden</p>
-      <p class="text-xl text-gray-600 mb-8">May 22, 2026</p>
-      
-      <WeddingCountdown client:load weddingDate="2026-05-22T16:00:00" />
-      
-      <div class="mt-10">
-        <a 
-          href="/wedding/rsvp" 
-          class="inline-block bg-rose-600 hover:bg-rose-700 text-white font-semibold py-3 px-8 rounded-lg transition mx-2 mb-4"
-        >
-          RSVP Now
-        </a>
-        <a 
-          href="/wedding/gallery" 
-          class="inline-block border-2 border-rose-600 text-rose-600 hover:bg-rose-600 hover:text-white font-semibold py-3 px-8 rounded-lg transition mx-2 mb-4"
-        >
-          View Gallery
-        </a>
-      </div>
+
+
+  <!-- Section 1-->
+  <section class="my-12" >
+       
+     <!-- TITLE SECTION -->
+  <div class="text-center mt-8 mb-8">
+    <p class="font-thin">THE <span class="fancy-font text-5xl mx-3 font-thin">Wedding</span> OF </p>
+    <p class="text-3xl uppercase mt-3 font-medium">Makenzie & Jayden</p>
+    <p class="mt-4 text-base text-zinc-500">May 22, 2026<br/>Frankfort, Indiana</p>
+    <div class="flex justify-center mt-4">
+      <a href="/wedding/rsvp">
+      <button class="border border-green text-green py-2 px-4 rounded hover:text-zinc-200 transition">
+        RSVP
+      </button>
+      </a>
+       <a href="https://www.myregistry.com/wedding-registry/jayden-diaz-and-makenzie-wilson-longwood-fl/4860873/giftlist" target="_blank">
+       <button class="border border-green text-green py-2 px-4 ml-2 mr-2 rounded hover:text-zinc-200 transition">
+        Registry
+      </button>
+      </a>
+      <a href="/wedding/gallery">
+      <button class="border border-green text-green py-2 px-4 rounded hover:text-zinc-200 transition">
+        Gallery
+      </button>
+      </a>
+
     </div>
-  </section>
+
+  </div>
+
+
+        <div class="grid grid-cols-[1fr_3fr_1fr] items-center mt-5">
+      <div class="euc-l"></div>
+      <div> 
+        <Image 
+        src={import("../../assets/P1240400.jpg")}  
+        alt="Couple Photo"  
+        class="rounded-lg h-auto w-auto "/>
+      </div>
+      <div class="euc-r"></div>
+    </div>
+   
+    <WeddingCountdown client:load weddingDate="2026-05-22T16:00:00" class="my-10"/>
+ 
+  </section><!--end section 1 -->
 
   <!-- Event Information -->
-  <section class="py-16">
+  <section class="my-12" id="details">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Event Details</h2>
+      <p class="text-3xl text-center text-green font-600 uppercase mb-10">Event Details</p>
+
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-white rounded-lg shadow-md p-6 text-center">
-          <div class="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-rose-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+       
+        <div class="bg-zinc-300 rounded-lg shadow-md p-6 text-center">
+          <div class="w-16 h-16 bg-green rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-zinc-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-gray-800 mb-2">Ceremony</h3>
-          <p class="text-gray-600 mb-2">Friday, May 22, 2026</p>
-          <p class="text-gray-600 mb-2">12:00 PM</p>
-          <p class="text-gray-600">Willow Creek Barn</p>
+          <h3 class="text-2xl uppercase font-bold text-zinc-900 mb-2">Ceremony</h3>
+         <p class="text-xl text-zinc-700 mb-2">Friday</p>
+          <p class="text-xl text-zinc-700 mb-2">May 22, 2026</p>
+          <p class="text-xl text-zinc-700 ">12:00 PM</p>
         </div>
         
-        <div class="bg-white rounded-lg shadow-md p-6 text-center">
-          <div class="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-rose-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+         <div class="bg-zinc-300 rounded-lg shadow-md p-6 text-center">
+           <div class="w-16 h-16 bg-green rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-zinc-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-gray-800 mb-2">Location</h3>
-          <p class="text-gray-600 mb-2">1575 E Kirklin Brick Rd</p>
-          <p class="text-gray-600 mb-2">Frankfort, IN 46041</p>
-          <a 
-            href="https://maps.app.goo.gl/ZSgM2fhF6GRAkHjG6" 
-            target="_blank" 
-            class="text-rose-600 hover:text-rose-800 font-medium inline-flex items-center justify-center"
-          >
+          <h3 class="text-2xl uppercase font-bold text-zinc-900 mb-2">Location</h3>
+          <p class="text-xl text-zinc-700 mb-2">The Willow Creek Barn</p>
+          <p class="text-xl text-zinc-700 mb-2">1575 E Kirklin Brick Rd</p>
+          <p class="text-xl text-zinc-700 mb-2">Frankfort, IN 46041</p>
+          <a  href="https://maps.app.goo.gl/ZSgM2fhF6GRAkHjG6"  target="_blank"  class="text-green hover:underline text-xl inline-flex items-center justify-center" >
             View Map
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
               <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -71,148 +92,184 @@ import GuestBook from '../../components/GuestBook.vue';
           </a>
         </div>
         
-        <div class="bg-white rounded-lg shadow-md p-6 text-center">
-          <div class="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-rose-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div class="bg-zinc-300 rounded-lg shadow-md p-6 text-center">
+           <div class="w-16 h-16 bg-green rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-zinc-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.701 2.701 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18zm-3-9v-2a2 2 0 00-2-2H8a2 2 0 00-2 2v2h12z" />
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-gray-800 mb-2">Reception</h3>
-          <p class="text-gray-600 mb-2">Immediately following ceremony</p>
-          <p class="text-gray-600 mb-2">Dinner & Dancing</p>
-          <p class="text-gray-600">Same location</p>
+         <h3 class="text-2xl uppercase font-bold text-zinc-900 mb-2">Reception</h3>
+          <p class="text-xl text-zinc-700 mb-2">Same location</p>
+          <p class="text-xl text-zinc-700 mb-2">Immediately following ceremony</p>
+          <p class="text-xl text-zinc-700 ">Dinner & Dancing</p>
         </div>
+
+
       </div>
     </div>
   </section>
 
-  <!-- Wedding Couple Section -->
-  <section class="py-16 bg-rose-50">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Our Story</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        <div>
-          <Image 
-            src={import("../../assets/P1240400.jpg")} 
-            alt="Couple Photo" 
-            class="rounded-lg shadow-lg w-full h-auto"
-            width={1500}
-            height={1500}
-          />
+  <!-- Our Story Section -->
+  <section class="pb-8" id="about">
+    <div class="euc-b"></div>
+    <div class="container mx-auto px-4 ">
+      <h2 class="text-3xl text-center text-green font-600 uppercase mb-10">Our Story</h2>
+      
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20">
+            <div>
+              <Image 
+                src={import("../../assets/P1250505.jpg")} 
+                alt="Couple Photo" 
+                class="rounded-lg w-full h-auto"
+              />
 
-        </div>
-        <div>
-          <h3 class="text-2xl font-bold text-gray-800 mb-4">How We Met</h3>
-          <p class="text-gray-600 mb-6">
-            Jayden and Makenzie's story started back in their school days, though they were more like ships passing in the hallway—familiar faces, but not quite friends. Years later fate gave them a nudge through Jayden's cousin. They started hanging out, and what began as casual get-togethers quickly turned into something real. Their connection just clicked, and the rest is history.
-          </p>
-          <h3 class="text-2xl font-bold text-gray-800 mb-4">The Proposal</h3>
-          <p class="text-gray-600 mb-6">
-            On a trip to North Carolina, Jayden and Makenzie visited the stunning Biltmore Estate. While wandering through the gardens, they came across a quirky tree they dubbed the "asparagus tree". It was there, under that funny tree, that Jayden got down on one knee and proposed. It was a simple, heartfelt moment—perfectly them.
-          </p>
-          <p class="italic text-gray-700">
-            "Love is not about how many days, months, or years you have been together. 
-            Love is about how much you love each other every single day."
-          </p>
-        </div>
-      </div>
+            </div>
+            <div>
+              <h3 class="text-2xl mb-4 uppercase">How We Met</h3>
+              <p>
+                Jayden and Makenzie's story started back in their school days, though they were more like ships passing in the hallway—familiar faces, but not quite friends. Years later fate gave them a nudge through Jayden's cousin. They started hanging out, and what began as casual get-togethers quickly turned into something real. Their connection just clicked, and the rest is history.
+              </p>
+
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+              <div>
+                <h3 class="text-2xl mb-4 uppercase">The Proposal</h3>
+                <p class=" mb-6">
+                  On a trip to North Carolina, Jayden and Makenzie visited the stunning Biltmore Estate. While wandering through the gardens, they came across a quirky tree they dubbed the "asparagus tree". It was there, under that funny tree, that Jayden got down on one knee and proposed. It was a simple, heartfelt moment—perfectly them.
+                </p>
+
+               <div class="grid grid-cols-2 gap-2 items-center">
+                 <Image 
+                  src={import("../../assets/proposal-1.png")} 
+                  alt="Couple Photo" 
+                  class="rounded-lg h-full w-full"
+                />
+                 <Image 
+                  src={import("../../assets/proposal-2.png")} 
+                  alt="Couple Photo" 
+                  class="rounded-lg h-full w-full"
+                />
+                
+               </div>
+              </div>
+
+              <div>
+                <Image 
+                  src={import("../../assets/proposal-4.jpg")} 
+                  alt="Couple Photo" 
+                  class="rounded-lg w-full h-auto"
+                />
+
+              </div>
+          </div>
+
+    </div>
+
+  </section>
+
+  <!-- Quote Section -->
+  <section>
+    <div class="bg-zinc-800 border-zinc-800 border-b border-t border-solid pt-5 pb-5">
+       <p class="italic text-xl text-center"> "Love is not about how many days, months, or years you have been together. <br/>Love is about how much you love each other every single day." 
+      </p>
     </div>
   </section>
+
 
   <!-- Wedding Party Section -->
-  <!-- <section id="wedding-party" class="py-16">
+  <section id="wedding-party" class="py-16">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Wedding Party</h2>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12"> -->
-        <!-- Bride's Side -->
-        <!-- <div>
-          <h3 class="text-2xl font-bold text-center text-rose-700 mb-8">Bride's Side</h3>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div class="text-center">
-              <img 
-                src="/placeholder.svg?height=200&width=200" 
-                alt="Maid of Honor" 
-                class="rounded-full w-32 h-32 object-cover mx-auto mb-4"
-              />
-              <h4 class="text-xl font-bold text-gray-800">Sarah Johnson</h4>
-              <p class="text-gray-600">Maid of Honor</p>
-            </div>
-            <div class="text-center">
-              <img 
-                src="/placeholder.svg?height=200&width=200" 
-                alt="Bridesmaid" 
-                class="rounded-full w-32 h-32 object-cover mx-auto mb-4"
-              />
-              <h4 class="text-xl font-bold text-gray-800">Emily Davis</h4>
-              <p class="text-gray-600">Bridesmaid</p>
-            </div>
-            <div class="text-center">
-              <img 
-                src="/placeholder.svg?height=200&width=200" 
-                alt="Bridesmaid" 
-                class="rounded-full w-32 h-32 object-cover mx-auto mb-4"
-              />
-              <h4 class="text-xl font-bold text-gray-800">Jessica Wilson</h4>
-              <p class="text-gray-600">Bridesmaid</p>
-            </div>
-            <div class="text-center">
-              <img 
-                src="/placeholder.svg?height=200&width=200" 
-                alt="Bridesmaid" 
-                class="rounded-full w-32 h-32 object-cover mx-auto mb-4"
-              />
-              <h4 class="text-xl font-bold text-gray-800">Olivia Brown</h4>
-              <p class="text-gray-600">Bridesmaid</p>
-            </div>
-          </div>
-        </div> -->
+      <h2 class="text-3xl text-center text-green font-600 uppercase mb-6">Wedding Party</h2>
+       <p class="text-center text-zinc-100 max-w-2xl mx-auto mb-12">
+          These are the legends who’ve stood by us through late-night calls, road trips, sleepovers, questionable fashion choices, and way too many group chats. From lifelong friends (and best friends who feel like family), our wedding party is made up of the people we couldn’t imagine this day without. Get to know the VIPs who’ll be helping us laugh, cry, dance, and maybe keep us somewhat sane on our big day.
+              </p>
         
-        <!-- Groom's Side -->
-        <!-- <div>
-          <h3 class="text-2xl font-bold text-center text-rose-700 mb-8">Groom's Side</h3>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div class="text-center">
-              <img 
-                src="/placeholder.svg?height=200&width=200" 
-                alt="Best Man" 
-                class="rounded-full w-32 h-32 object-cover mx-auto mb-4"
-              />
-              <h4 class="text-xl font-bold text-gray-800">Michael Smith</h4>
-              <p class="text-gray-600">Best Man</p>
-            </div>
-            <div class="text-center">
-              <img 
-                src="/placeholder.svg?height=200&width=200" 
-                alt="Groomsman" 
-                class="rounded-full w-32 h-32 object-cover mx-auto mb-4"
-              />
-              <h4 class="text-xl font-bold text-gray-800">David Thompson</h4>
-              <p class="text-gray-600">Groomsman</p>
-            </div>
-            <div class="text-center">
-              <img 
-                src="/placeholder.svg?height=200&width=200" 
-                alt="Groomsman" 
-                class="rounded-full w-32 h-32 object-cover mx-auto mb-4"
-              />
-              <h4 class="text-xl font-bold text-gray-800">Robert Garcia</h4>
-              <p class="text-gray-600">Groomsman</p>
-            </div>
-            <div class="text-center">
-              <img 
-                src="/placeholder.svg?height=200&width=200" 
-                alt="Groomsman" 
-                class="rounded-full w-32 h-32 object-cover mx-auto mb-4"
-              />
-              <h4 class="text-xl font-bold text-gray-800">James Miller</h4>
-              <p class="text-gray-600">Groomsman</p>
-            </div>
+      <!--bride -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-2 mb-10"> 
+          <div class="text-center">
+            <Image 
+                  src={import("../../assets/party-jada.jpg")} 
+                  alt="Wedding Party" 
+                  class="rounded-lg party-pic"
+                />
+              <h4 class="text-xl font-bold text-zinc-100">Jada</h4>
+              <p class="text-zinc-400">Maid of Honor</p>
           </div>
+          <div class="text-center">
+            <Image 
+                  src={import("../../assets/party-jada.jpg")}                 
+                  alt="Wedding Party" 
+                  class="rounded-lg party-pic"
+                />
+              <h4 class="text-xl font-bold text-zinc-100">Shaunte</h4>
+              <p class="text-zinc-400">Bridesmaid</p>
+          </div>
+          <div class="text-center">
+            <Image 
+                  src={import("../../assets/party-jada.jpg")} 
+                  alt="Wedding Party" 
+                  class="rounded-lg party-pic"
+                />
+              <h4 class="text-xl font-bold text-zinc-100">Ema</h4>
+              <p class="text-zinc-400">Bridesmaid</p>
+          </div>
+          <div class="text-center">
+            <Image 
+                  src={import("../../assets/party-jada.jpg")} 
+                  alt="Wedding Party" 
+                  class="rounded-lg party-pic"
+                />
+              <h4 class="text-xl font-bold text-zinc-100">Shianne</h4>
+              <p class="text-zinc-400">Bridesmaid</p>
+          </div>
+            
         </div>
-      </div>
+
+      <!--groom -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-2 mb-10"> 
+          <div class="text-center">
+            <Image 
+                  src={import("../../assets/party-rami.png")} 
+                  alt="Wedding Party" 
+                  class="rounded-lg party-pic"
+                />
+              <h4 class="text-xl font-bold text-zinc-100">Rami</h4>
+              <p class="text-zinc-400">Best Man</p>
+          </div>
+          <div class="text-center">
+            <Image 
+                  src={import("../../assets/party-rami.png")}                 
+                  alt="Wedding Party" 
+                  class="rounded-lg party-pic"
+                />
+              <h4 class="text-xl font-bold text-zinc-100">Griffin</h4>
+              <p class="text-zinc-400">Groomsmen</p>
+          </div>
+          <div class="text-center">
+            <Image 
+                  src={import("../../assets/party-rami.png")} 
+                  alt="Wedding Party" 
+                  class="rounded-lg party-pic"
+                />
+              <h4 class="text-xl font-bold text-zinc-100">Kyle</h4>
+              <p class="text-zinc-400">Groomsmen</p>
+          </div>
+          <div class="text-center">
+            <Image 
+                  src={import("../../assets/party-rami.png")} 
+                  alt="Wedding Party" 
+                  class="rounded-lg party-pic"
+                />
+              <h4 class="text-xl font-bold text-zinc-100">Nic</h4>
+              <p class="text-zinc-400">Groomsmen</p>
+          </div>
+            
+        </div>
     </div>
-  </section> -->
+  </section> 
 
   <!-- Guest Book Section -->
   <!-- <section id="guestbook" class="py-16">

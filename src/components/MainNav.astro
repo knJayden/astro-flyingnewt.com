@@ -1,40 +1,56 @@
 ---
-const pathname = Astro.url.pathname;
-const isHome = pathname === '/';
-const isWedding = pathname.includes('/wedding');
+const { pathname } = Astro.url;
+const isActive = (path) => pathname === path;
 ---
 
-<header class="bg-teal-700 text-white shadow-md sticky top-0 z-50">
-  <div class="container mx-auto px-4 py-4">
-    <div class="flex flex-col items-center">
-      <a href="/" class="text-2xl font-bold mb-4">Flying Newt</a>
-      
-      <nav>
-        <ul class="flex space-x-8">
-          <li>
-            <a 
-              href="/" 
-              class={`hover:text-teal-200 transition ${isHome ? 'font-bold border-b-2 border-white pb-1' : ''}`}
-            >
-              Home
-            </a>
-          </li>
-          <li>
-            <a 
-              href="/wedding" 
-              class={`hover:text-teal-200 transition ${isWedding ? 'font-bold border-b-2 border-white pb-1' : ''}`}
-            >
-              Wedding
-            </a>
-          </li>
-          <li>
-            <a href="/about" class="hover:text-teal-200 transition">About Us</a>
-          </li>
-          <li>
-            <a href="/contact" class="hover:text-teal-200 transition">Contact</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
+<header class="bg-zinc-900 text-zinc-100 sticky top-0 z-50">
+  <div class="container mx-auto px-4 py-6 flex items-center justify-between border-b border-zinc-700">
+
+    <!-- LOGO / TITLE (left on all screens) -->
+    <div class="text-xl font-thin"><a href="/wedding">Makenzie & Jayden</a></div>
+
+    <!-- HAMBURGER BUTTON (mobile only) -->
+    <button id="menu-toggle" class="md:hidden">
+      <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+
+    <!-- DESKTOP NAV (right aligned) -->
+    <nav class="hidden md:block">
+      <ul class="flex gap-6 text-lg">
+        <li><a href="/wedding">Home</a></li>
+        <li><a href="/wedding/#details">Event Details</a></li>
+        <li><a href="/wedding/#about">Our Story</a></li>
+        <li><a href="/wedding/gallery">Gallery</a></li>
+        <li><a href="/wedding/#wedding-party">Wedding Party</a></li>
+        <li><a href="https://www.myregistry.com/wedding-registry/jayden-diaz-and-makenzie-wilson-longwood-fl/4860873/giftlist" target="_blank">Registry</a></li>
+        <li><a href="/wedding/rsvp" class="text-green font-bold">RSVP</a></li>
+      </ul>
+    </nav>
   </div>
+
+  <!-- MOBILE NAV MENU -->
+  <div id="mobile-menu" class="hidden md:hidden text-center pb-4 border-b border-zinc-700">
+    <ul class="flex flex-col gap-4 text-lg mt-4">
+      <li><a href="/wedding">Home</a></li>
+      <li><a href="/wedding/#details">Event Details</a></li>
+      <li><a href="/wedding/#about">Our Story</a></li>
+      <li><a href="/wedding/gallery">Gallery</a></li>
+      <li><a href="/wedding/registry">Registry</a></li>
+      <li><a href="/wedding/rsvp" class="text-green font-bold">RSVP</a></li>
+    </ul>
+  </div>
+
+  <!-- JS TOGGLE FOR MOBILE MENU -->
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggleButton = document.getElementById('menu-toggle');
+      const menu = document.getElementById('mobile-menu');
+
+      toggleButton?.addEventListener('click', () => {
+        menu?.classList.toggle('hidden');
+      });
+    });
+  </script>
 </header>
