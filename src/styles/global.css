@@ -1,0 +1,88 @@
+body {
+  font-family: "Forum", serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+.fancy-font {
+    font-family: "Corinthia", cursive;
+}
+
+nav, nav ul {
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  padding-bottom: 0.25rem;
+  border-bottom: 2px solid transparent;
+  text-decoration: none;
+}
+
+nav a.active, nav a:hover {
+  border-bottom-color: #96b3a0;
+}
+.text-green {
+    color: #96b3a0;
+}
+.bg-green {
+    background-color: #96b3a0;
+}
+.border-green {
+    border-color: #96b3a0;
+}
+
+.bg {
+    background-image: url('src/assets/euc-1.svg') ;
+     background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  /* Optional: set height if needed */
+  height: 300px;
+}
+
+.euc-t{
+ background-image: url(../src/assets/euc-top.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    min-height: 40px;
+    width: 100%;
+}
+
+.euc-b{
+ background-image: url(../src/assets/euc-bot.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+    min-height: 100px;
+    width: 100%;
+    opacity: .4;
+
+}
+
+.euc-r{
+ background-image: url(../src/assets/euc-rig.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: contain;
+    min-height: 100%;
+    width: 100%;
+    opacity: 0.4;
+}
+.euc-l{
+ background-image: url(../src/assets/euc-lef.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+    min-height: 100%;
+    width: 100%;
+     opacity: 0.4;
+}
+
+.party-pic {
+    object-fit: cover;
+    height:300px;
+    width: 100%;
+}

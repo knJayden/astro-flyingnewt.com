@@ -3,6 +3,7 @@ import { ViewTransitions } from 'astro:transitions';
 import MainNav from '../components/MainNav.astro';
 import WeddingNav from '../components/WeddingNav.astro';
 import Footer from '../components/Footer.astro';
+import '../styles/global.css';
 
 interface Props {
   title: string;
@@ -19,12 +20,17 @@ const { title, description = "Our Wedding | Flying Newt Family" } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title} | Flying Newt</title>
     <meta name="description" content={description} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=Forum&display=swap" rel="stylesheet">
+
     <ViewTransitions />
   </head>
-  <body class="min-h-screen flex flex-col bg-white text-gray-800">
+  <body class="min-h-screen flex flex-col bg-zinc-900 text-zinc-100">
     <MainNav />
-    <WeddingNav />
     <main class="flex-grow">
       <slot />
     </main>

@@ -2,7 +2,7 @@
     <form @submit.prevent="submitForm" class="space-y-6">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <label for="firstName" class="block text-sm font-medium text-gray-700 mb-1">First Name</label>
+          <label for="firstName" class="block text-xl font-medium text-zinc-900 mb-1">First Name</label>
           <input 
             type="text" 
             id="firstName" 
@@ -12,7 +12,7 @@
           />
         </div>
         <div>
-          <label for="lastName" class="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
+          <label for="lastName" class="block text-xl font-medium text-zinc-900 mb-1">Last Name</label>
           <input 
             type="text" 
             id="lastName" 
@@ -24,7 +24,7 @@
       </div>
       
       <div>
-        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+        <label for="email" class="block text-xl font-medium text-zinc-900 mb-1">Email</label>
         <input 
           type="email" 
           id="email" 
@@ -35,7 +35,7 @@
       </div>
       
       <div>
-        <label class="block text-sm font-medium text-gray-700 mb-1">Will you be attending?</label>
+        <label class="block text-xl font-medium text-gray-700 mb-1">Will you be attending?</label>
         <div class="flex space-x-4">
           <label class="inline-flex items-center">
             <input 
@@ -44,7 +44,7 @@
               :value="true" 
               class="text-rose-600 focus:ring-rose-500"
             />
-            <span class="ml-2">Yes, I'll be there!</span>
+            <span class="ml-2 text-zinc-900 text-md">Yes, I'll be there!</span>
           </label>
           <label class="inline-flex items-center">
             <input 
@@ -53,13 +53,13 @@
               :value="false" 
               class="text-rose-600 focus:ring-rose-500"
             />
-            <span class="ml-2">Sorry, I can't make it</span>
+            <span class="ml-2 text-zinc-900">Sorry, I can't make it</span>
           </label>
         </div>
       </div>
       
       <div v-if="form.attending">
-        <label for="guests" class="block text-sm font-medium text-gray-700 mb-1">Number of Guests (including yourself)</label>
+        <label for="guests" class="block text-lg font-medium text-gray-700 mb-1">Number of Guests (including yourself)</label>
         <select 
           id="guests" 
           v-model="form.guestCount" 
@@ -73,7 +73,7 @@
       </div>
       
       <div v-if="form.attending">
-        <label for="dietaryRestrictions" class="block text-sm font-medium text-gray-700 mb-1">Dietary Restrictions</label>
+        <label for="dietaryRestrictions" class="block text-lg font-medium text-gray-700 mb-1">Dietary Restrictions</label>
         <textarea 
           id="dietaryRestrictions" 
           v-model="form.dietaryRestrictions" 
@@ -84,7 +84,7 @@
       </div>
       
       <div>
-        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message (Optional)</label>
+        <label for="message" class="block text-lg font-medium text-gray-700 mb-1">Message (Optional)</label>
         <textarea 
           id="message" 
           v-model="form.message" 
@@ -97,14 +97,14 @@
       <div class="flex justify-center">
         <button 
           type="submit" 
-          class="px-6 py-3 bg-rose-600 text-white font-semibold rounded-md hover:bg-rose-700 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-offset-2 transition"
+          class="px-6 py-3 bg-green text-zinc-100 font-semibold rounded-md transition"
           :disabled="submitting"
         >
           {{ submitting ? 'Submitting...' : 'Submit RSVP' }}
         </button>
       </div>
       
-      <div v-if="submitted" class="text-center p-4 bg-green-100 text-green-800 rounded-md">
+      <div v-if="submitted" class="text-center p-4 bg-green-100 text-zinc-900 rounded-md">
         Thank you for your RSVP! We've received your response.
       </div>
     </form>
