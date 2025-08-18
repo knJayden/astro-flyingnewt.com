@@ -1,6 +1,6 @@
 ---
 import WeddingLayout from '../../layouts/WeddingLayout.astro';
-import Gallery from '../../components/Gallery.vue';
+import GalleryComponent from '../../components/Gallery.vue';
 ---
 
 <WeddingLayout title="Wedding Gallery">
@@ -11,7 +11,7 @@ import Gallery from '../../components/Gallery.vue';
         Browse through our favorite moments together — from the day we said "yes" to the everyday adventures that brought us closer. Whether it's candid laughs, sweet looks, or once-in-a-lifetime memories, we’re so excited to share our journey with you.
       </p>
       
-      <Gallery client:load />
+      <GalleryComponent client:load />
     </div>
   </section>
 </WeddingLayout>
