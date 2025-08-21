@@ -34,7 +34,7 @@ nav a.active, nav a:hover {
 }
 
 .bg {
-    background-image: url('src/assets/euc-1.svg') ;
+    background-image: url(/assets/euc-1.svg) ;
      background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -43,7 +43,7 @@ nav a.active, nav a:hover {
 }
 
 .euc-t{
- background-image: url(../src/assets/euc-top.png);
+ background-image: url(/assets/euc-top.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -52,7 +52,7 @@ nav a.active, nav a:hover {
 }
 
 .euc-b{
- background-image: url(../src/assets/euc-bot.png);
+ background-image: url(/assets/euc-bot.png);
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: contain;
@@ -63,7 +63,7 @@ nav a.active, nav a:hover {
 }
 
 .euc-r{
- background-image: url(../src/assets/euc-rig.png);
+ background-image: url(/assets/euc-rig.png);
     background-repeat: no-repeat;
     background-position: left;
     background-size: contain;
@@ -72,7 +72,7 @@ nav a.active, nav a:hover {
     opacity: 0.4;
 }
 .euc-l{
- background-image: url(../src/assets/euc-lef.png);
+ background-image: url(/assets/euc-lef.png);
     background-repeat: no-repeat;
     background-position: right;
     background-size: contain;
